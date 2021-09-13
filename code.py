@@ -13,33 +13,50 @@ categoryNum = 0
 hiddenWord = []
 strHiddenWord = ""
 
+checkRepeat = False
+
 index = 0
+    
   
 def wordGuess():
-  global hiddenWord
-  global index
-  global strHiddenWord
-  print(hints[categoryNum - 1])
-  for x in range(len(word)):
-    hiddenWord.append("_ ")
-  for x in hiddenWord:
-    strHiddenWord += x  
+    global index
+    global checkRepeat
     
-  print(strHiddenWord)    
-  wordI = input("Letter: \n")
-  
-  for x in word:
-     if x.upper() == wordI:
+    if checkRepeat == False: 
+      global hiddenWord
+      
+      global strHiddenWord
+      
+      print(hints[categoryNum - 1])
+      for x in range(len(word)):
+        hiddenWord.append("_ ")
+        
+      for x in hiddenWord:
+        strHiddenWord += x  
+        
+    print(strHiddenWord)  
+         
+    wordI = input("Letter: \n")
+      
+    for x in word:
+    #   if x.upper() == wordI:
+    #      hiddenWord[index] = str(wordI)
+    #      index += 1
+             
+      if x.lower() == wordI:
          hiddenWord[index] = str(wordI)
          
-     elif x.lower() == wordI:
-         hiddenWord[index] = str(wordI)
-     index += 1
-     strHiddenWord = ""
-  for x in hiddenWord:
-    strHiddenWord += x  
-    
-  print(strHiddenWord)    
+      index += 1
+         
+    strHiddenWord = ""
+      
+    for x in hiddenWord:
+      strHiddenWord += x  
+         
+    index = 0
+    checkRepeat = True
+    wordGuess()
+
 
   
 def wordGen():
