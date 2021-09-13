@@ -10,18 +10,22 @@ word = ""
 
 categoryNum = 0
 
-hiddenWord = ""
+hiddenWord = []
+strHiddenWord = ""
 
 index = 0
   
 def wordGuess():
   global hiddenWord
   global index
+  global strHiddenWord
   print(hints[categoryNum - 1])
   for x in range(len(word)):
-    hiddenWord += "_ "
-
-  print(hiddenWord)
+    hiddenWord.append("_ ")
+  for x in hiddenWord:
+    strHiddenWord += x  
+    
+  print(strHiddenWord)    
   wordI = input("Letter: \n")
   
   for x in word:
@@ -31,8 +35,12 @@ def wordGuess():
      elif x.lower() == wordI:
          hiddenWord[index] = str(wordI)
      index += 1
-  print(hiddenWord)
-  
+     strHiddenWord = ""
+  for x in hiddenWord:
+    strHiddenWord += x  
+    
+  print(strHiddenWord)    
+
   
 def wordGen():
   global word
