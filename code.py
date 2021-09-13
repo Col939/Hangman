@@ -11,22 +11,26 @@ word = ""
 categoryNum = 0
 
 hiddenWord = ""
+
+index = 0
   
 def wordGuess():
   global hiddenWord
+  global index
   print(hints[categoryNum - 1])
   for x in range(len(word)):
     hiddenWord += "_ "
 
+  print(hiddenWord)
   wordI = input("Letter: \n")
   
   for x in word:
      if x.upper() == wordI:
-         hiddenWord[x] = wordI
+         hiddenWord[index] = str(wordI)
          
      elif x.lower() == wordI:
-         print("hi")
-         
+         hiddenWord[index] = str(wordI)
+     index += 1
   print(hiddenWord)
   
   
