@@ -3,7 +3,7 @@ import sys
 
 foodWords = ["Pineapple", "Toast", "Pasta", "Peach", "Pie", "Pizza", "Tomato"]
 
-colorWords = ["Lime", "Magenta", "Yellow", "SkyBlue", "Grey", "Red"]
+colorWords = ["Lime", "Magenta", "Yellow", "SkyBlue", "Grey", "Red", "Brown"]
 
 categories = ["foodWords", "colors"]
 
